@@ -11,6 +11,9 @@ module.exports = {
                 process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
                 process.env.OPENSHIFT_APP_NAME;
         }
+        else if(process.env.TRAVIS) {
+            return 'mongodb://' + process.env.TRAVIS_DBUSER + ':' + process.env.TRAVIS_DBPASS + '@' + process.env.TRAVIS_DBURL;
+        }
 
         return 'mongodb://' + constants.dbUser + ':' + constants.dbPassword + '@' + constants.dbUrl;
     }
