@@ -1,0 +1,9 @@
+deploy:
+  provider: openshift
+  user: d3viam@gmail.com
+  password:
+    secure: KpUVUZXN8mO5LvnOmi31m6YKgJ6mn9XaJ0hwayxpsVxC9A6ajvmC+Q3GHgNkKTAkESeNo7QSKgacMxwIWgbTfvr4hefflBgr8ZNxC8jPT4RNN0qZzzBTD/EY6rsAT9KZ6kiV4MLRhr71TR1+1syddNvB3aT41WcyPaum2XCbutcAVNHQZRANPqb4aTOCzYZ3mT7oTOxfwf47dQAeftBZlSNMYaXO9lJ6oYgUvXIou6hnflN91g9+NScTiyJMXV2DNqhWGez8x4BiDy/2U1T0SqaNGXiVt57D2k2HLGmxXZr6W3LL4oWDJ4R5pb6C745CPHOjbOMP1Mkh1zW1YbU+wzVMYzeApOsfLGTGeHeaqng/WE1akDqMzWMyu/P9daLKKZ4+AUnsGvt1y+CIpXKW3+9YtT+7NezW1jcCmiT/xnvXlmerc0T3pZ6LNn07MGDm4szcMwJUMggw93q/XUk4wykpEiXVZeRtJR9+mMZVP9I2Wp5uMSEEhnMHJ6szntKG/1uTrUf2Kfedz3liPzpeVeSRycjf1kKT7vTHGxhosociTr1YUcCQsNg1q0+7BIaXqmdru6JWZ8m7drEVxv36DUhV2FVSkayEWaunc2iDHMHrQTcLgsu26xfTCZDsICWEQAs9oQvLX1JqYpJS2WH8/y+RsEeMU3RjFauDzqH1OYk=
+  app: todo
+  domain: todo-pbideas.rhcloud.com
+  on:
+    repo: pbideas/todo
