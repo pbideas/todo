@@ -31,16 +31,15 @@ module.exports = function(app) {
            isDone: req.body.isDone,
            hasAttachment: req.body.hasAttachment
        });
-       newItem.save(function(err) {
+       newItem.save(function(err, item) {
           if (err) {
               throw err;
           }
-          res.sendStatus(201); 
+          res.location(req.path + '/' + item._id).status(201).end(); 
        });
     });
     
     app.put('/api/item/:id', function(req, res) {
-        console.log(req.body);
         Item.findByIdAndUpdate(req.params.id, {
             content: req.body.content,
             isDone: req.body.isDone,
@@ -49,7 +48,7 @@ module.exports = function(app) {
             if (err) {
                 throw err;
             }
-            res.sendStatus(200);
+            res.status(200).end();
         });
     });
     
@@ -58,7 +57,7 @@ module.exports = function(app) {
             if (err) {
                 throw err;
             }
-            res.sendStatus(200);
+            res.status(200).end();
         });
     });
 };

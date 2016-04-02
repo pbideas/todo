@@ -18,3 +18,5 @@ mongoose.connect(config.getDbConnectionString());
 itemController(app);
 
 app.listen(port);
+
+module.exports = app;
