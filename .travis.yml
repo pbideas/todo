@@ -2,12 +2,3 @@ language: node_js
 node_js:
   - "5"
 before_install: npm install -g grunt-cli
-deploy:
-  provider: openshift
-  user: d3viam@gmail.com
-  password:
-    secure: SOiwk7BdD80HVHeBr1Mm1D7yhTQpdS3Xaxal62/rMZlsEjrXeowT/AOj3uLA9oNs4XH/KXlu5E7Wtfgqyh72gHGCUdPrWAbe6wVJY4VZ6czYMS/ejJc697lSHztEL75vD5hP2hGtnC1eyirh9JDee6HO2n5OqKRmx+VltKeCFcGoKJdFPM840MJ5JivJczW3arMYisSRg5+vUr2TnWx+vLDejSzsW/IC9BoH9PJb370soOzQlB1DkeOPJbKCEfIoyAEmQeaf2wJPWS9KT6zI3SGl8HiWS0+WfwSPm3TKzmzv/4fmh8npv1zwqF/23Y19okBWiI2j8TuKVtJWY9wnXB6oPB+rHu4prUpySxw/rnI1d5mlff4oOaRX1ma/m3aqbpUVqOqBqH5EI/PLqgRu2HjBj0JMB6WCt7nlRETiY+HHJOky8Wlkqi+KGcRarFShzjW9rauPIL6/vAziw0IvZxp1ODK75ehd9fWFGIS9cMKaqbwtcRjxPfMQLw0yH2Rhg8pU8A6xTVQaFT9p/TzPiL5tKmm6HXKdUJYFKow8EqvRL+9CQbH3huQs2r+00sK407l1FNGwtFuORJ4gN6JkA9ooeLXof4muLiLHPKHMlcATo+CfCC/q6AIBL0nYCCi2hpEyIb8owrZuVhmXLW3gYkv+M5ddbwmlrwo6kxJsdno=
-  app: todo
-  domain: pbideas
-  on:
-    repo: pbideas/todo
