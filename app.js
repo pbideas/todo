@@ -13,6 +13,10 @@ app.use('/assets', express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
+app.get('/', function(req, res) {
+	res.render('index');
+});
+
 mongoose.connect(config.getDbConnectionString());
 
 itemController(app);
