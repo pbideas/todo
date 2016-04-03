@@ -7,7 +7,7 @@ var config = require('./config');
 
 var itemController = require('./controllers/itemController');
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000;
 
 app.use('/assets', express.static(__dirname + '/public'));
 
