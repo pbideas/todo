@@ -10,7 +10,7 @@ module.exports = function(app) {
     app.get('/api/item', function(req, res) {
         Item.find({}, function(err, items) {
             if (err) {
-                throw err;
+                console.log(err);
             }
             res.send(items);
         });
@@ -19,7 +19,7 @@ module.exports = function(app) {
     app.get('/api/item/:id', function(req, res) {
         Item.findById({ _id: req.params.id }, function(err, item) {
             if (err) {
-                throw err;
+                console.log(err);
             }
             res.send(item);
         });
@@ -33,20 +33,20 @@ module.exports = function(app) {
        });
        newItem.save(function(err, item) {
           if (err) {
-              throw err;
+              console.log(err);
           }
           res.location(req.path + '/' + item._id).status(201).end(); 
        });
     });
     
     app.put('/api/item/:id', function(req, res) {
-        Item.findByIdAndUpdate(req.params.id, {
-            content: req.body.content,
-            isDone: req.body.isDone,
-            hasAttachment: req.body.hasAttachment
-        }, function(err, item) {
+        var itm = {};
+        if (req.body.content) { itm.content = req.body.content; }
+        if (req.body.isDone !== null) { itm.isDone = req.body.isDone; }
+        if (req.body.hasAttachment !== null) { itm.hasAttachment = req.body.hasAttachment; }
+        Item.findByIdAndUpdate(req.params.id, itm, function(err, item) {
             if (err) {
-                throw err;
+                console.log(err);
             }
             res.status(200).end();
         });
@@ -55,7 +55,7 @@ module.exports = function(app) {
     app.delete('/api/item/:id', function(req, res) {
         Item.findByIdAndRemove(req.params.id, function(err) {
             if (err) {
-                throw err;
+                console.log(err);
             }
             res.status(200).end();
         });
