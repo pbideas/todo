@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
 mongoose.connect(config.getDbConnectionString());
 
 mongoose.connection.on('connected', function () {  
-  console.log('Mongoose default connection open to ' + dbURI);
+  console.log('Mongoose default connection open to ' + config.getDbConnectionString());
 }); 
 mongoose.connection.on('error',function (err) {  
   console.log('Mongoose default connection error: ' + err);
