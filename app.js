@@ -19,6 +19,16 @@ app.get('/', function(req, res) {
 
 mongoose.connect(config.getDbConnectionString());
 
+mongoose.connection.on('connected', function () {  
+  console.log('Mongoose default connection open to ' + dbURI);
+}); 
+mongoose.connection.on('error',function (err) {  
+  console.log('Mongoose default connection error: ' + err);
+}); 
+mongoose.connection.on('disconnected', function () {  
+  console.log('Mongoose default connection disconnected'); 
+});
+
 itemController(app);
 
 app.listen(port);
